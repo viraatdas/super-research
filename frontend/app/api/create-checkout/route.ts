@@ -1,9 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { Resend } from 'resend';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2025-09-30.clover',
 });
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+async function sendNotificationEmail(customerEmail: string, query: string) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Deepest Research <onboarding@resend.dev>',
+      to: ['viraat@exla.ai'],
+      subject: 'Deepest Research: New Request',
+      html: `
+        <h2>New Research Request</h2>
+        <p><strong>Customer Email:</strong> ${customerEmail}</p>
+        <p><strong>Research Query:</strong></p>
+        <blockquote style="border-left: 4px solid #f97316; padding-left: 16px; margin: 16px 0; color: #374151;">
+          ${query}
+        </blockquote>
+        <p><em>This request was submitted through the Deepest Research website.</em></p>
+      `,
+    });
+
+    if (error) {
+      console.error('Resend API error:', error);
+      throw error;
+    }
+
+    console.log('Email sent successfully:', data);
+    return data;
+  } catch (emailError) {
+    console.error('Failed to send email:', emailError);
+    throw emailError;
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -68,6 +101,16 @@ export async function POST(request: NextRequest) {
         email: email,
       },
     });
+
+    // Send notification email to viraat@exla.ai
+    try {
+      console.log('Attempting to send email notification...');
+      const emailResult = await sendNotificationEmail(email, query);
+      console.log('Email notification sent successfully:', emailResult);
+    } catch (emailError) {
+      console.error('Failed to send notification email:', emailError);
+      // Don't fail the request if email fails - Stripe should still work
+    }
 
     return NextResponse.json({
       url: session.url,
