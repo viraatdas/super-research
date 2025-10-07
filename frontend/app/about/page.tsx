@@ -11,7 +11,7 @@ export default function About() {
           </Link>
           
           <h1 className="text-4xl font-medium text-gray-900 mb-6">
-            About Super Deep Research
+            How Super Deep Research Works
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Automated deep research that runs for 3 days straight. No human intervention required.
