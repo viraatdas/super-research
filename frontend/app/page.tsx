@@ -35,8 +35,8 @@ export default function Home() {
               keep on doing that until we are happy. 
             </p>
             <p className="text-lg text-gray-600">
-              This will run for 3 days. It'll search the depths of the planet for information. 
-              It'll be the most comprehensive research ever done. 
+              This will run for 3 days. It'll search the depths of the planet for information - 
+              places you didn't even know existed. It'll be the most comprehensive research ever done. 
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
 
         <div className="mt-8 text-center text-xs text-gray-400">
-          Research runs for 3 days automatically. No intervention needed. (Auto-deploy test)
+          Research runs for 3 days automatically. No intervention needed.
         </div>
       </div>
     </div>

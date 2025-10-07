@@ -154,7 +154,7 @@ export default function Checkout() {
               <div>
                 <h4 className="font-medium text-blue-900 text-sm">Why do we charge $1?</h4>
                 <p className="text-blue-800 text-sm mt-1">
-                  The small fee helps prevent spam submissions and covers our research API costs, ensuring we can provide quality analysis for everyone.
+                  The small fee helps prevent spam submissions.
                 </p>
               </div>
             </div>
