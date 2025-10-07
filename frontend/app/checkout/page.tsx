@@ -57,8 +57,8 @@ export default function Checkout() {
       {/* Header */}
       <header className="w-full p-4 flex justify-between items-center border-b border-gray-200">
         <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-          <h1 className="text-xl font-bold text-gray-900">
-            Super Deep Research
+          <h1 className="text-xl font-light text-gray-900">
+            Deepest Research
           </h1>
         </Link>
         <Link 
@@ -73,7 +73,7 @@ export default function Checkout() {
       <div className="flex items-center justify-center min-h-[calc(100vh-80px)] p-4">
         <div className="w-full max-w-lg">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">
               Almost there!
             </h2>
             <p className="text-gray-600">

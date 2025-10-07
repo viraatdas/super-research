@@ -10,16 +10,16 @@ export default function Success() {
           </svg>
         </div>
         
-        <h1 className="text-3xl font-medium text-gray-900 mb-4">
-          Research Started!
-        </h1>
+          <h1 className="text-3xl font-light text-gray-900 mb-4">
+            Research Started!
+          </h1>
         
         <p className="text-lg text-gray-600 mb-8">
           Your research task is now running. You'll receive the PDF report in your email within 3 days.
         </p>
         
         <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
-          <h2 className="font-medium text-gray-900 mb-4">What happens next?</h2>
+          <h2 className="font-light text-gray-900 mb-4 text-lg">What happens next?</h2>
           <div className="space-y-3 text-sm text-gray-600 text-left">
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">

@@ -23,8 +23,8 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-medium text-gray-900 mb-6">
-            Start a super deep research task
+          <h1 className="text-4xl font-light text-gray-900 mb-6">
+            Start a <span className="underline">deepest research</span> task
           </h1>
           <div className="text-left max-w-2xl mx-auto space-y-4">
             <p className="text-lg text-gray-600">
@@ -33,6 +33,10 @@ export default function Home() {
             <p className="text-lg text-gray-600">
               So lets scrape every inch of the internet and shove it down the LLM's throat and 
               keep on doing that until we are happy. 
+            </p>
+            <p className="text-lg text-gray-600">
+              This will run for 3 days. It'll search the depths of the planet for information. 
+              It'll be the most comprehensive research ever done. 
             </p>
           </div>
         </div>

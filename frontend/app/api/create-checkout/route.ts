@@ -11,9 +11,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 async function sendNotificationEmail(customerEmail: string, query: string) {
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Super Deep Research <onboarding@resend.dev>',
+      from: 'Deepest Research <onboarding@resend.dev>',
       to: ['viraat@exla.ai'],
-      subject: 'Super Deep Research: New Request',
+      subject: 'Deepest Research: New Request',
       html: `
         <h2>New Research Request</h2>
         <p><strong>Customer Email:</strong> ${customerEmail}</p>
@@ -21,7 +21,7 @@ async function sendNotificationEmail(customerEmail: string, query: string) {
         <blockquote style="border-left: 4px solid #f97316; padding-left: 16px; margin: 16px 0; color: #374151;">
           ${query}
         </blockquote>
-        <p><em>This request was submitted through the Super Deep Research website.</em></p>
+        <p><em>This request was submitted through the Deepest Research website.</em></p>
       `,
     });
 
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: 'Super Deep Research',
+              name: 'Deepest Research',
               description: 'Automated research task - 3 days processing time',
             },
             unit_amount: 100, // $1.00 in cents

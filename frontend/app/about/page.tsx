@@ -10,8 +10,8 @@ export default function About() {
             ← Back to Home
           </Link>
           
-          <h1 className="text-4xl font-medium text-gray-900 mb-6">
-            How Super Deep Research Works
+          <h1 className="text-4xl font-light text-gray-900 mb-6">
+            How <span className="underline">Deepest Research</span> Works
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Automated deep research that runs for 3 days straight. No human intervention required.
@@ -21,7 +21,7 @@ export default function About() {
         <div className="space-y-12">
           {/* Architecture Section */}
           <section className="bg-white rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Research Architecture (lol)</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">Research Architecture</h2>
             <div className="relative w-full rounded-lg overflow-hidden bg-gray-100">
               <Image
                 src="/architecture-design.jpg"
@@ -38,7 +38,7 @@ export default function About() {
 
           {/* How It Works */}
           <section className="bg-white rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">How it works</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">How it works</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -68,7 +68,7 @@ export default function About() {
 
           {/* Why 3 Days */}
           <section className="bg-white rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Why 3 days?</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">Why 3 days?</h2>
             <div className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed">
                 Idk. 3 days seemed like it would generate more dramatic results. 
@@ -78,7 +78,7 @@ export default function About() {
 
           {/* Simple Pricing */}
           <section className="bg-white rounded-xl p-8 shadow-sm text-center">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Simple Pricing</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">Simple Pricing</h2>
             <div className="inline-block bg-orange-50 rounded-lg p-6">
               <div className="text-4xl font-bold text-orange-600 mb-2">$1</div>
               <div className="text-gray-600">per research query</div>
