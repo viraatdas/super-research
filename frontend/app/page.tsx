@@ -78,7 +78,7 @@ export default function Home() {
         </div>
 
         <div className="mt-8 text-center text-xs text-gray-400">
-          Research runs for 3 days automatically. No intervention needed.
+          Research runs for 3 days automatically. No intervention needed. (Auto-deploy test)
         </div>
       </div>
     </div>
