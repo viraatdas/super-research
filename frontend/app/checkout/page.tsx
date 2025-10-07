@@ -126,7 +126,7 @@ export default function Checkout() {
                       Processing...
                     </div>
                   ) : (
-                    'Pay $1 & Start Research'
+                    'Pay $1 and Start Research'
                   )}
                 </button>
               </div>
