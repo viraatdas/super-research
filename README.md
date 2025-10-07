@@ -1,5 +1,7 @@
 # Super Deep Research
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c4894af7-171d-4785-83a7-dae2043b0eeb/deploy-status)](https://app.netlify.com/projects/exla-super-research/deploys)
+
 A minimal research platform where users can submit research questions for $1 and receive comprehensive analysis delivered as PDF reports to their email in 3 days.
 
 ## Features
