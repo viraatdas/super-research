@@ -9,26 +9,33 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendNotificationEmail(customerEmail: string, query: string) {
-  const { data, error } = await resend.emails.send({
-    from: 'Super Deep Research <notifications@viraat.dev>',
-    to: ['viraat@exla.ai'],
-    subject: 'Super Deep Research: New Request',
-    html: `
-      <h2>New Research Request</h2>
-      <p><strong>Customer Email:</strong> ${customerEmail}</p>
-      <p><strong>Research Query:</strong></p>
-      <blockquote style="border-left: 4px solid #f97316; padding-left: 16px; margin: 16px 0; color: #374151;">
-        ${query}
-      </blockquote>
-      <p><em>This request was submitted through the Super Deep Research website.</em></p>
-    `,
-  });
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Super Deep Research <onboarding@resend.dev>',
+      to: ['viraat@exla.ai'],
+      subject: 'Super Deep Research: New Request',
+      html: `
+        <h2>New Research Request</h2>
+        <p><strong>Customer Email:</strong> ${customerEmail}</p>
+        <p><strong>Research Query:</strong></p>
+        <blockquote style="border-left: 4px solid #f97316; padding-left: 16px; margin: 16px 0; color: #374151;">
+          ${query}
+        </blockquote>
+        <p><em>This request was submitted through the Super Deep Research website.</em></p>
+      `,
+    });
 
-  if (error) {
-    throw error;
+    if (error) {
+      console.error('Resend API error:', error);
+      throw error;
+    }
+
+    console.log('Email sent successfully:', data);
+    return data;
+  } catch (emailError) {
+    console.error('Failed to send email:', emailError);
+    throw emailError;
   }
-
-  return data;
 }
 
 export async function POST(request: NextRequest) {
@@ -97,10 +104,12 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to viraat@exla.ai
     try {
-      await sendNotificationEmail(email, query);
+      console.log('Attempting to send email notification...');
+      const emailResult = await sendNotificationEmail(email, query);
+      console.log('Email notification sent successfully:', emailResult);
     } catch (emailError) {
       console.error('Failed to send notification email:', emailError);
-      // Don't fail the request if email fails
+      // Don't fail the request if email fails - Stripe should still work
     }
 
     return NextResponse.json({

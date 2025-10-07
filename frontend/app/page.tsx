@@ -23,12 +23,18 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-medium text-gray-900 mb-4">
+          <h1 className="text-4xl font-medium text-gray-900 mb-6">
             Start a super deep research task
           </h1>
-          <p className="text-lg text-gray-600">
-            I think that letting deep research run for a few days generates better results. So lets try it.
-          </p>
+          <div className="text-left max-w-2xl mx-auto space-y-4">
+            <p className="text-lg text-gray-600">
+              I think that letting deep research run for a few days generates better results. 
+            </p>
+            <p className="text-lg text-gray-600">
+              So lets scrape every inch of the internet and shove it down the LLM's throat and 
+              keep on doing that until we are happy. 
+            </p>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">          
@@ -65,7 +71,6 @@ export default function Home() {
 
         <div className="mt-12 text-center">
           <div className="inline-flex items-center space-x-8 text-sm text-gray-500">
-            <span>$1 • 3 days • PDF report</span>
             <Link href="/about" className="hover:text-gray-700 transition-colors">
               How this works
             </Link>
