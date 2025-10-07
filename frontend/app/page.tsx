@@ -24,7 +24,7 @@ export default function Home() {
       <div className="w-full max-w-2xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-light text-gray-900 mb-6">
-            Start a <span className="underline">deepest research</span> task
+            Start a <span className="underline">Deepest Research</span> task
           </h1>
           <div className="text-left max-w-2xl mx-auto space-y-4">
             <p className="text-lg text-gray-600">

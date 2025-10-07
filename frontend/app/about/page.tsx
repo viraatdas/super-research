@@ -14,14 +14,14 @@ export default function About() {
             How <span className="underline">Deepest Research</span> Works
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Automated deep research that runs for 3 days straight. No human intervention required.
+            Automated deep research that runs for 3 days straight. 
           </p>
         </div>
 
         <div className="space-y-12">
           {/* Architecture Section */}
           <section className="bg-white rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-light text-gray-900 mb-6">Research Architecture</h2>
+            <h2 className="text-2xl font-light text-gray-900 mb-6">Research Architecture (lol)</h2>
             <div className="relative w-full rounded-lg overflow-hidden bg-gray-100">
               <Image
                 src="/architecture-design.jpg"
@@ -31,9 +31,7 @@ export default function About() {
                 className="w-full h-auto object-contain"
               />
             </div>
-            <p className="text-gray-600 mt-4 text-center text-sm">
-              Our research pipeline automatically processes your query through multiple stages of analysis
-            </p>
+   
           </section>
 
           {/* How It Works */}
@@ -83,9 +81,7 @@ export default function About() {
               <div className="text-4xl font-bold text-orange-600 mb-2">$1</div>
               <div className="text-gray-600">per research query</div>
             </div>
-            <p className="text-gray-600 mt-6 max-w-md mx-auto">
-              One flat rate. No subscriptions, no hidden fees. Pay only when you need research.
-            </p>
+           
           </section>
         </div>
 
