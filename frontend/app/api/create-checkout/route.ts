@@ -10,7 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendNotificationEmail(customerEmail: string, query: string) {
   const { data, error } = await resend.emails.send({
-    from: 'Super Deep Research <notifications@superdeepresearch.com>',
+    from: 'Super Deep Research <notifications@viraat.dev>',
     to: ['viraat@exla.ai'],
     subject: 'Super Deep Research: New Request',
     html: `
