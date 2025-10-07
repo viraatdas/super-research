@@ -21,13 +21,14 @@ export default function About() {
         <div className="space-y-12">
           {/* Architecture Section */}
           <section className="bg-white rounded-xl p-8 shadow-sm">
-            <h2 className="text-2xl font-medium text-gray-900 mb-6">Research Architecture</h2>
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-gray-100">
+            <h2 className="text-2xl font-medium text-gray-900 mb-6">Research Architecture (lol)</h2>
+            <div className="relative w-full rounded-lg overflow-hidden bg-gray-100">
               <Image
                 src="/architecture-design.jpg"
                 alt="Super Deep Research Architecture Design"
-                fill
-                className="object-cover"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-contain"
               />
             </div>
             <p className="text-gray-600 mt-4 text-center text-sm">
@@ -70,12 +71,7 @@ export default function About() {
             <h2 className="text-2xl font-medium text-gray-900 mb-6">Why 3 days?</h2>
             <div className="prose prose-gray max-w-none">
               <p className="text-gray-600 leading-relaxed">
-                Quality research takes time. Our system needs 72 hours to properly gather information, 
-                cross-reference sources, analyze patterns, and compile everything into a structured report.
-              </p>
-              <p className="text-gray-600 leading-relaxed mt-4">
-                Unlike instant AI responses, we prioritize accuracy and depth. The 3-day timeline allows 
-                our system to work methodically through your research question without rushing.
+                Idk. 3 days seemed like it would generate more dramatic results. 
               </p>
             </div>
           </section>

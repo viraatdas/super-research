@@ -5,12 +5,13 @@ import Link from 'next/link';
 
 export default function Home() {
   const [query, setQuery] = useState('');
+  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!query.trim()) return;
+    if (!query.trim() || !email.trim()) return;
     
     setIsSubmitting(true);
     setMessage('');
@@ -21,7 +22,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, email }),
       });
 
       const data = await response.json();
@@ -43,14 +44,26 @@ export default function Home() {
       <div className="w-full max-w-2xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-medium text-gray-900 mb-4">
-            Start a deep research task
+            Start a super deep research task
           </h1>
           <p className="text-lg text-gray-600">
-            From question to verifiable structured intelligence.
+            I think that letting deep research run for a few days generates better results. So lets try it.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="relative">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address..."
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+          
           <div className="relative">
             <textarea
               value={query}
@@ -62,15 +75,10 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <div className="w-4 h-4 bg-gradient-to-br from-orange-400 to-red-400 rounded-sm"></div>
-              <span>Ultra (Recommended)</span>
-            </div>
-            
+          <div className="flex items-center justify-end">
             <button
               type="submit"
-              disabled={isSubmitting || !query.trim()}
+              disabled={isSubmitting || !query.trim() || !email.trim()}
               className="bg-orange-400 hover:bg-orange-500 disabled:bg-gray-300 text-white px-6 py-2.5 rounded-lg font-medium transition-colors disabled:cursor-not-allowed flex items-center space-x-2"
             >
               <span>{isSubmitting ? 'STARTING...' : 'START RESEARCH'}</span>
